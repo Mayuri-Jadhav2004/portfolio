@@ -1,512 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mayuri Jadhav | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:Arial, sans-serif;
-      background:#0b0f1a;
-      color:white;
-      overflow-x:hidden;
-    }
-
-    /* NAVBAR */
-
-    nav{
-      width:100%;
-      position:fixed;
-      top:0;
-      left:0;
-      padding:20px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(0,0,0,0.4);
-      backdrop-filter:blur(10px);
-      z-index:1000;
-    }
-
-    nav h2{
-      color:#00bfff;
-    }
-
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:25px;
-    }
-
-    nav ul li a{
-      color:white;
-      text-decoration:none;
-      transition:0.3s;
-    }
-
-    nav ul li a:hover{
-      color:#00bfff;
-    }
-
-    /* HERO SECTION */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:120px 20px;
-      background:linear-gradient(to bottom,#08111f,#111827);
-    }
-
-    .hero-content{
-      max-width:800px;
-      animation:fadeIn 2s ease;
-    }
-
-    .hero img{
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      border:4px solid #00bfff;
-      object-fit:cover;
-      box-shadow:0 0 30px #00bfff;
-      margin-bottom:25px;
-    }
-
-    .hero h1{
-      font-size:50px;
-      color:#00bfff;
-      margin-bottom:15px;
-    }
-
-    .hero h3{
-      font-size:24px;
-      margin-bottom:20px;
-      color:#d1d5db;
-    }
-
-    .hero p{
-      font-size:18px;
-      line-height:30px;
-      color:#cbd5e1;
-      margin-bottom:35px;
-    }
-
-    .buttons{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:15px;
-    }
-
-    .buttons a{
-      text-decoration:none;
-    }
-
-    .buttons button{
-      padding:14px 28px;
-      border:none;
-      border-radius:30px;
-      background:linear-gradient(45deg,#00bfff,#2563eb);
-      color:white;
-      font-size:16px;
-      cursor:pointer;
-      transition:0.4s;
-      box-shadow:0 0 20px rgba(0,191,255,0.5);
-    }
-
-    .buttons button:hover{
-      transform:translateY(-5px) scale(1.05);
-    }
-
-    /* SECTION */
-
-    section{
-      padding:90px 10%;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:40px;
-      color:#00bfff;
-      margin-bottom:50px;
-    }
-
-    /* ABOUT */
-
-    .about-box{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      padding:35px;
-      border-radius:20px;
-      backdrop-filter:blur(10px);
-      line-height:32px;
-      font-size:18px;
-    }
-
-    /* SKILLS */
-
-    .skills-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:25px;
-    }
-
-    .skill-card{
-      background:#111827;
-      padding:25px;
-      border-radius:20px;
-      text-align:center;
-      transition:0.4s;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .skill-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 20px rgba(0,191,255,0.4);
-    }
-
-    .skill-card h3{
-      color:#00bfff;
-      margin-bottom:10px;
-    }
-
-    /* PROJECTS */
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-
-    .project-card{
-      background:#111827;
-      padding:25px;
-      border-radius:20px;
-      transition:0.4s;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .project-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 20px rgba(0,191,255,0.4);
-    }
-
-    .project-card h3{
-      color:#00bfff;
-      margin-bottom:15px;
-    }
-
-    .project-card p{
-      line-height:28px;
-      color:#d1d5db;
-    }
-
-    /* CONTACT */
-
-    .contact-box{
-      text-align:center;
-      background:rgba(255,255,255,0.05);
-      padding:40px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-box p{
-      margin:15px 0;
-      font-size:18px;
-    }
-
-    .contact-box a{
-      color:#00bfff;
-      text-decoration:none;
-    }
-
-    /* FOOTER */
-
-    footer{
-      text-align:center;
-      padding:25px;
-      background:#000;
-      color:#9ca3af;
-    }
-
-    /* ANIMATION */
-
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    /* MOBILE */
-
-    @media(max-width:768px){
-
-      nav{
-        flex-direction:column;
-        gap:15px;
-      }
-
-      nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-      .hero h1{
-        font-size:38px;
-      }
-
-      .hero h3{
-        font-size:20px;
-      }
-
-    }
-
-  </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayuri Jadhav | Aspiring Data Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-<body>
-
-  <!-- NAVBAR -->
-
-  <nav>
-
-    <h2>Mayuri Portfolio</h2>
-
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-  </nav>
-
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-
-    <div class="hero-content">
-
-      <img src="mayuri.jpg" alt="Mayuri Photo">
-
-      <h1>Mayuri Jadhav</h1>
-
-      <h3>
-        Aspiring Data Analyst | Power BI Enthusiast
-      </h3>
-
-      <p>
-        Passionate about Data Analytics, Business Intelligence,
-        and transforming data into meaningful insights using
-        Power BI, SQL, and Excel.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#projects">
-          <button>View Projects</button>
-        </a>
-
-        <a href="#contact">
-          <button>Contact Me</button>
-        </a>
-
-        <a href="#">
-          <button>Download Resume</button>
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section id="about">
-
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about-box">
-
-      <p>
-        Mayuri Jadhav is currently pursuing a Bachelor of Engineering
-        (B.E.) in Information Technology from Savitribai Phule Pune University
-        and is expected to graduate in 2026.
-      </p>
-
-      <br>
-
-      <p>
-        Skilled in SQL, Power BI, Microsoft Excel, dashboard creation,
-        and data visualization. Passionate about solving business problems
-        through data-driven insights.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-
-  <section id="skills">
-
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills-container">
-
-      <div class="skill-card">
-        <h3>SQL</h3>
-        <p>Database Queries & Analysis</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Power BI</h3>
-        <p>Interactive Dashboards</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Excel</h3>
-        <p>Data Cleaning & Reporting</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Data Visualization</h3>
-        <p>Business Insights</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Dashboard Creation</h3>
-        <p>Interactive Reports</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Business Intelligence</h3>
-        <p>Analytics & Reporting</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- PROJECTS -->
-
-  <section id="projects">
-
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects">
-
-      <div class="project-card">
-
-        <h3>Sales Dashboard in Power BI</h3>
-
-        <p>
-          Interactive dashboard analyzing sales performance,
-          revenue trends, and customer insights using Power BI.
-        </p>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>SQL Database Analysis Project</h3>
-
-        <p>
-          Queried and analyzed datasets using SQL joins,
-          aggregations, filtering, and reporting.
-        </p>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>Excel Data Analysis Project</h3>
-
-        <p>
-          Performed data cleaning, filtering, sorting,
-          and generated business insights using Excel.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-
-    <h2 class="section-title">Contact Me</h2>
-
-    <div class="contact-box">
-
-      <p>
-        Open to internships and entry-level opportunities
-        in Data Analytics and Business Intelligence.
-      </p>
-
-      <p>
-        📧 Email:
-        <a href="mailto:mayurijadhav3278@gmail.com">
-          mayurijadhav3278@gmail.com
-        </a>
-      </p>
-
-      <p>
-        💼 LinkedIn:
-        <a href="https://www.linkedin.com/in/mayuri-jadhav-3a6a27345/" target="_blank">
-          LinkedIn Profile
-        </a>
-      </p>
-
-      <p>
-        💻 GitHub:
-        <a href="https://github.com/Mayuri-Jadhav2004" target="_blank">
-          GitHub Profile
-        </a>
-      </p>
-
-      <p>
-        📍 Maharashtra, India
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    © 2026 Mayuri Jadhav | Portfolio Website
-
-  </footer>
+<body class="bg-slate-950 text-slate-100 font-sans scroll-smooth">
+
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider text-blue-400">Mayuri<span class="text-white">.Data</span></a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </nav>
+            <a href="#resume" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition">Resume</a>
+        </div>
+    </header>
+
+    <section id="home" class="max-w-6xl mx-auto px-4 py-20 md:py-32 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <h3 class="text-blue-400 text-lg font-medium tracking-wide">Hello, I'm</h3>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white">Mayuri Jadhav</h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-slate-400">Aspiring Data Analyst | Power BI Enthusiast</h2>
+            <p class="text-slate-400 max-w-xl leading-relaxed">
+                Transforming raw data into meaningful insights using Power BI, SQL, and Python. Passionate about Business Intelligence and Analytics.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg shadow-blue-900/30">View Projects</a>
+                <a href="#resume" class="border border-slate-700 hover:border-slate-500 bg-slate-900 text-white px-6 py-3 rounded-lg font-medium transition">Download Resume</a>
+            </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-blue-600 to-cyan-400 shadow-2xl">
+                <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden flex items-center justify-center">
+                    <img src="profile.jpg" alt="Mayuri Jadhav Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-900 max-w-6xl mx-auto">
+
+    <section id="about" class="max-w-6xl mx-auto px-4 py-20 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+            <h2 class="text-3xl font-bold tracking-tight text-white">About Me</h2>
+            <div class="h-1 w-12 bg-blue-500 mx-auto rounded"></div>
+            <p class="text-slate-400 leading-relaxed text-lg">
+                Motivated and detail-oriented aspiring Data Analyst with internship experience in Data Science and Analytics. 
+                Skilled in data cleaning, exploratory data analysis, dashboard creation, and business data visualization. 
+                Passionate about transforming raw data into actionable insights to support business decisions.
+            </p>
+        </div>
+
+        <div class="pt-6">
+            <h3 class="text-center text-sm font-semibold uppercase tracking-wider text-slate-500 mb-6">Technical Skills</h3>
+            <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                <span class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:border-blue-500 transition">Python</span>
+                <span class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:border-blue-500 transition">SQL</span>
+                <span class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:border-blue-500 transition">Power BI</span>
+                <span class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:border-blue-500 transition">Excel</span>
+                <span class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:border-blue-500 transition">Pandas</span>
+                <span class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:border-blue-500 transition">Jupyter</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-900 max-w-6xl mx-auto">
+
+    <section id="experience" class="max-w-6xl mx-auto px-4 py-20">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white">Work Experience</h2>
+            <div class="h-1 w-12 bg-blue-500 mx-auto rounded"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto border-l-2 border-slate-800 pl-6 space-y-12 relative">
+            <div class="relative">
+                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-950"></div>
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Data Science Intern</h3>
+                        <p class="text-blue-400 font-medium flex items-center gap-2 mt-1">
+                            <i class="fa-solid fa-location-dot text-sm"></i> Gyanterth, Pune
+                        </p>
+                    </div>
+                    <span class="text-sm px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 font-medium md:self-start self-fit">
+                        Jan 2025 – Jan 2025
+                    </span>
+                </div>
+                <ul class="space-y-3 text-slate-400 list-disc pl-4 leading-relaxed">
+                    <li>Analyzed structured datasets using Python, Excel, and SQL to support business case studies.</li>
+                    <li>Performed data cleaning and preprocessing to ensure data accuracy and consistency.</li>
+                    <li>Built interactive dashboards and visual reports to track key performance indicators (KPIs).</li>
+                    <li>Conducted exploratory data analysis (EDA) to identify trends and generate actionable business insights.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-900 max-w-6xl mx-auto">
+
+    <section id="projects" class="max-w-6xl mx-auto px-4 py-20">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white">Featured Projects</h2>
+            <div class="h-1 w-12 bg-blue-500 mx-auto rounded"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl flex flex-col justify-between hover:border-slate-700 transition group">
+                <div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-900">Excel</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-900">SQL</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-900">Power BI</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Sales Performance Dashboard</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Interactive dashboard for monthly and regional sales analysis, improving reporting efficiency using dynamic filters and dashboards.
+                    </p>
+                </div>
+                <a href="#" target="_blank" class="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2 mt-auto">
+                    <i class="fa-brands fa-github text-lg"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl flex flex-col justify-between hover:border-slate-700 transition group">
+                <div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-900">Python</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-900">Pandas</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-900">Excel</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Customer Sales Analysis</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Analyzed customer behavior and revenue trends using Python Pandas for data processing and created analytical reports.
+                    </p>
+                </div>
+                <a href="#" target="_blank" class="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2 mt-auto">
+                    <i class="fa-brands fa-github text-lg"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-900 max-w-6xl mx-auto">
+
+    <section id="contact" class="max-w-6xl mx-auto px-4 py-20 flex flex-col lg:flex-row gap-12">
+        <div class="flex-1 space-y-6">
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Get In Touch</h2>
+                <div class="h-1 w-12 bg-blue-500 rounded"></div>
+                <p class="text-slate-400">Open to internships and entry-level opportunities</p>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Email</h4>
+                        <a href="mailto:mayurijadhav3278@gmail.com" class="text-slate-300 hover:text-blue-400 transition text-sm">mayurijadhav3278@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Phone</h4>
+                        <a href="tel:+919699213278" class="text-slate-300 hover:text-blue-400 transition text-sm">+91-9699213278</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Location</h4>
+                        <p class="text-slate-300 text-sm">Nashik, Maharashtra, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <h4 class="text-xs text-slate-500 uppercase font-semibold tracking-wider mb-3">CONNECT ON SOCIAL</h4>
+                <div class="flex space-x-4">
+                    <a href="#" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 transition"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Your Name *</label>
+                    <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Your Email *</label>
+                    <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Subject *</label>
+                    <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Your Message *</label>
+                    <textarea rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500 transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg shadow-blue-900/20">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Mayuri Jadhav. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>

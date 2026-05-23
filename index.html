@@ -1,54 +1,512 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayuri Jadhav | Portfolio</title>
 
-<style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body{
-background:#111;
-color:white;
-font-family:Arial;
-text-align:center;
-padding:40px;
-}
+  <style>
 
-img{
-width:150px;
-height:150px;
-border-radius:50%;
-border:3px solid #00b4ff;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
 
-h1{
-color:#00b4ff;
-}
+    body{
+      font-family:Arial, sans-serif;
+      background:#0b0f1a;
+      color:white;
+      overflow-x:hidden;
+    }
 
-button{
-padding:10px 20px;
-background:#00b4ff;
-color:white;
-border:none;
-border-radius:20px;
-}
+    /* NAVBAR */
 
-</style>
+    nav{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    nav h2{
+      color:#00bfff;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#00bfff;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 20px;
+      background:linear-gradient(to bottom,#08111f,#111827);
+    }
+
+    .hero-content{
+      max-width:800px;
+      animation:fadeIn 2s ease;
+    }
+
+    .hero img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:4px solid #00bfff;
+      object-fit:cover;
+      box-shadow:0 0 30px #00bfff;
+      margin-bottom:25px;
+    }
+
+    .hero h1{
+      font-size:50px;
+      color:#00bfff;
+      margin-bottom:15px;
+    }
+
+    .hero h3{
+      font-size:24px;
+      margin-bottom:20px;
+      color:#d1d5db;
+    }
+
+    .hero p{
+      font-size:18px;
+      line-height:30px;
+      color:#cbd5e1;
+      margin-bottom:35px;
+    }
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .buttons a{
+      text-decoration:none;
+    }
+
+    .buttons button{
+      padding:14px 28px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(45deg,#00bfff,#2563eb);
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 0 20px rgba(0,191,255,0.5);
+    }
+
+    .buttons button:hover{
+      transform:translateY(-5px) scale(1.05);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      color:#00bfff;
+      margin-bottom:50px;
+    }
+
+    /* ABOUT */
+
+    .about-box{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:35px;
+      border-radius:20px;
+      backdrop-filter:blur(10px);
+      line-height:32px;
+      font-size:18px;
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#111827;
+      padding:25px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 20px rgba(0,191,255,0.4);
+    }
+
+    .skill-card h3{
+      color:#00bfff;
+      margin-bottom:10px;
+    }
+
+    /* PROJECTS */
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#111827;
+      padding:25px;
+      border-radius:20px;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 20px rgba(0,191,255,0.4);
+    }
+
+    .project-card h3{
+      color:#00bfff;
+      margin-bottom:15px;
+    }
+
+    .project-card p{
+      line-height:28px;
+      color:#d1d5db;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      text-align:center;
+      background:rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-box p{
+      margin:15px 0;
+      font-size:18px;
+    }
+
+    .contact-box a{
+      color:#00bfff;
+      text-decoration:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#000;
+      color:#9ca3af;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero h3{
+        font-size:20px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-<img src="profile.jpg">
+  <!-- NAVBAR -->
 
-<h1>Mayuri Jadhav</h1>
+  <nav>
 
-<p>
-Aspiring Data Analyst | Power BI Enthusiast
-</p>
+    <h2>Mayuri Portfolio</h2>
 
-<button>
-Contact Me
-</button>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <img src="mayuri.jpg" alt="Mayuri Photo">
+
+      <h1>Mayuri Jadhav</h1>
+
+      <h3>
+        Aspiring Data Analyst | Power BI Enthusiast
+      </h3>
+
+      <p>
+        Passionate about Data Analytics, Business Intelligence,
+        and transforming data into meaningful insights using
+        Power BI, SQL, and Excel.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#projects">
+          <button>View Projects</button>
+        </a>
+
+        <a href="#contact">
+          <button>Contact Me</button>
+        </a>
+
+        <a href="#">
+          <button>Download Resume</button>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+
+      <p>
+        Mayuri Jadhav is currently pursuing a Bachelor of Engineering
+        (B.E.) in Information Technology from Savitribai Phule Pune University
+        and is expected to graduate in 2026.
+      </p>
+
+      <br>
+
+      <p>
+        Skilled in SQL, Power BI, Microsoft Excel, dashboard creation,
+        and data visualization. Passionate about solving business problems
+        through data-driven insights.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+        <h3>SQL</h3>
+        <p>Database Queries & Analysis</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Power BI</h3>
+        <p>Interactive Dashboards</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Excel</h3>
+        <p>Data Cleaning & Reporting</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Data Visualization</h3>
+        <p>Business Insights</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Dashboard Creation</h3>
+        <p>Interactive Reports</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Business Intelligence</h3>
+        <p>Analytics & Reporting</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+      <div class="project-card">
+
+        <h3>Sales Dashboard in Power BI</h3>
+
+        <p>
+          Interactive dashboard analyzing sales performance,
+          revenue trends, and customer insights using Power BI.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>SQL Database Analysis Project</h3>
+
+        <p>
+          Queried and analyzed datasets using SQL joins,
+          aggregations, filtering, and reporting.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Excel Data Analysis Project</h3>
+
+        <p>
+          Performed data cleaning, filtering, sorting,
+          and generated business insights using Excel.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+      <p>
+        Open to internships and entry-level opportunities
+        in Data Analytics and Business Intelligence.
+      </p>
+
+      <p>
+        📧 Email:
+        <a href="mailto:mayurijadhav3278@gmail.com">
+          mayurijadhav3278@gmail.com
+        </a>
+      </p>
+
+      <p>
+        💼 LinkedIn:
+        <a href="https://www.linkedin.com/in/mayuri-jadhav-3a6a27345/" target="_blank">
+          LinkedIn Profile
+        </a>
+      </p>
+
+      <p>
+        💻 GitHub:
+        <a href="https://github.com/Mayuri-Jadhav2004" target="_blank">
+          GitHub Profile
+        </a>
+      </p>
+
+      <p>
+        📍 Maharashtra, India
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Mayuri Jadhav | Portfolio Website
+
+  </footer>
 
 </body>
 </html>
